@@ -35,7 +35,7 @@ sudo apt install bluez bluez-tools python3 python3-pip
 
 # Clone repository
 git clone https://github.com/yourusername/airpods-prank.git
-cd airpods-prank
+cd airpodsBLEspoofer
 
 # Run the prank
-sudo python3 airpods_prank.py
+sudo python3 airpodsBLEspoofer.py
