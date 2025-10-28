@@ -2,7 +2,10 @@ import subprocess
 import time
 import sys
 
-def airpods_spoofer(message, duration=10):
+#If used on devices like pi pico 2ws just unplug to stop
+#If on command line interface use ctrl+c to stop
+
+def airpods_spoofer(message):
     print(f"Starting AirPods prank: '{message}'")
     
     # Reset Bluetooth interface
@@ -24,9 +27,8 @@ def airpods_spoofer(message, duration=10):
     subprocess.run([
         'sudo', 'hcitool', '-i', 'hci0', 'cmd', '0x08', '0x000a', '01'
     ], capture_output=True)
-    
-    print(f"Prank active for {duration} seconds...")
-    time.sleep(duration)
+
+    print("Press Ctrl + C To Turn Off")
     
     subprocess.run([
         'sudo', 'hcitool', '-i', 'hci0', 'cmd', '0x08', '0x000a', '00'
@@ -34,4 +36,4 @@ def airpods_spoofer(message, duration=10):
 
 if __name__ == "__main__":
     message = "Banned from using Airpods for participation in the 9/11 attacks"
-    airpods_spoofer(message, duration=15)
+    airpods_spoofer(message)
