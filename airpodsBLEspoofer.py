@@ -2,14 +2,14 @@ import subprocess
 import time
 import sys
 
-def airpods_spoofer(prank_message, duration=10):
-    print(f"Starting AirPods prank: '{prank_message}'")
+def airpods_spoofer(message, duration=10):
+    print(f"Starting AirPods prank: '{message}'")
     
     # Reset Bluetooth interface
     subprocess.run(['sudo', 'hciconfig', 'hci0', 'down'], capture_output=True)
     subprocess.run(['sudo', 'hciconfig', 'hci0', 'up'], capture_output=True)
     
-    subprocess.run(['sudo', 'hciconfig', 'hci0', 'name', prank_message], 
+    subprocess.run(['sudo', 'hciconfig', 'hci0', 'name', message], 
                    capture_output=True)
     
     # Apple AirPods advertisement pattern (simplified)
