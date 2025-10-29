@@ -6,8 +6,7 @@ import sys
 #If on command line interface use ctrl+c to stop
 
 def airpods_spoofer(message):
-    print(f"Starting AirPods prank: '{message}'")
-    
+    print("Starting...")
     # Reset Bluetooth interface
     subprocess.run(['sudo', 'hciconfig', 'hci0', 'down'], capture_output=True)
     subprocess.run(['sudo', 'hciconfig', 'hci0', 'up'], capture_output=True)
